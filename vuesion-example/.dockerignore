@@ -1,7 +1,0 @@
-node_modules
-.circleci
-.github
-coverage
-cypress
-cypress.json
-tsconfig.test.json

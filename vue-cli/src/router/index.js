@@ -1,22 +1,33 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../views/Home.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home,
+    name: 'Main',
+    redirect: '/books',
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+    path: '/books',
+    name: 'BooksList',
+    component: () => import(/* webpackChunkName: "Books" */ '../pages/BooksListPage.vue'),
+  },
+  {
+    path: '/authors',
+    name: 'AuthorsList',
+    component: () => import(/* webpackChunkName: "Authors" */ '../pages/AuthorsListPage.vue'),
+  },
+  {
+    path: '/newauthors',
+    name: 'AuthorAdd',
+    component: () => import(/* webpackChunkName: "Authors" */ '../pages/AuthorAddPage.vue'),
+  },
+  {
+    path: '/newbook',
+    name: 'BookAdd',
+    component: () => import(/* webpackChunkName: "Books" */ '../pages/BookAddPage.vue'),
   },
 ];
 

@@ -2,17 +2,13 @@
   <div>
     <h1 class="display-1 my-5">Добавить автора</h1>
     <v-text-field
+      prepend-icon="mdi-form-textbox"
       v-model="formData.name"
       label="ФИО"/>
+    <app-birthday-picker v-model="formData.dob"/>
+    <app-gender-picker v-model="formData.gender"/>
     <v-text-field
-      v-model="formData.dob"
-      label="Дата рождения"
-    />
-    <v-text-field
-      v-model="formData.gender"
-      label="Пол"
-    />
-    <v-text-field
+      prepend-icon="mdi-earth"
       v-model="formData.residence"
       label="Страна проживания"
     />
@@ -28,8 +24,14 @@
 
 <script>
 import { mapActions } from 'vuex';
+import AppBirthdayPicker from '@/components/AppBirthdayPicker.vue';
+import AppGenderPicker from '@/components/AppGenderPicker.vue';
 
 export default {
+  components: {
+    AppBirthdayPicker,
+    AppGenderPicker,
+  },
   data() {
     return {
       formData: {

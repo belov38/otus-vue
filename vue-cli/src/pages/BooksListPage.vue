@@ -2,39 +2,18 @@
   <div>
     <h1>Список книг</h1>
     <v-btn @click="addBook">Добавить книгу</v-btn>
-    <v-simple-table>
-      <template v-slot:default>
-        <thead>
-        <tr>
-          <th class="text-left">
-            Название книги
-          </th>
-          <th class="text-left">
-            Автор
-          </th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr
-          v-for="item in booksList"
-          :key="item.name"
-        >
-          <td>{{ item.name }}</td>
-          <td>{{ item.calories }}</td>
-        </tr>
-        </tbody>
-      </template>
-    </v-simple-table>
+    <app-book-table :books="books"/>
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex';
+import AppBookTable from '@/components/AppBookTable.vue';
 
 export default {
-  name: 'BooksListPage',
+  components: { AppBookTable },
   computed: {
-    ...mapState('books', ['booksList']),
+    ...mapState('books', ['books']),
   },
   methods: {
     addBook() {
@@ -45,7 +24,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-
-</style>

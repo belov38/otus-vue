@@ -27,7 +27,7 @@ export default {
     }) {
       const index = state.authors.findIndex((a) => a.authorId === authorId);
       Vue.set(state.authors, index, {
-        name, dob, gender, residence,
+        authorId, name, dob, gender, residence,
       });
     },
   },

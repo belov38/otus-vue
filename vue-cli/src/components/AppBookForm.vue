@@ -8,10 +8,8 @@
       v-model="formData.title"
       label="Название книги"
     />
-    <v-text-field
-      prepend-icon="mdi-account"
+    <app-author-input
       v-model="formData.author"
-      label="Автор"
     />
     <v-text-field
       prepend-icon="mdi-barcode"
@@ -51,8 +49,13 @@
   </div>
 </template>
 <script>
+import AppAuthorInput from '@/components/AppAuthorInput.vue';
+
 export default {
   name: 'app-book-form',
+  components: {
+    AppAuthorInput,
+  },
   props: {
     initValue: {
       type: Object,

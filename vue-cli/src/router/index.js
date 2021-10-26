@@ -10,14 +10,14 @@ const routes = [
     redirect: '/books',
   },
   {
-    path: '/books',
-    name: 'BooksList',
-    component: () => import(/* webpackChunkName: "Books" */ '../pages/BooksListPage.vue'),
-  },
-  {
     path: '/book/:id',
     name: 'BookEdit',
     component: () => import(/* webpackChunkName: "Books" */ '../pages/BookEditPage.vue'),
+  },
+  {
+    path: '/books',
+    name: 'BooksList',
+    component: () => import(/* webpackChunkName: "Books" */ '../pages/BooksListPage.vue'),
   },
   {
     path: '/authors',

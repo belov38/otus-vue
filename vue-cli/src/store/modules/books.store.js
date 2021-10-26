@@ -36,7 +36,7 @@ export default {
     }) {
       const index = state.books.findIndex((b) => b.bookId === bookId);
       Vue.set(state.books, index, {
-        title, author, isbn, tags, price, category, description,
+        bookId, title, author, isbn, tags, price, category, description,
       });
     },
   },

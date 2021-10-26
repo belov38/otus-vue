@@ -32,6 +32,19 @@ import AppGenderPicker from '@/components/AppGenderPicker.vue';
 
 export default {
   name: 'app-author-form',
+  props: {
+    initValue: {
+      type: Object,
+      default() {
+        return {
+          name: '',
+          dob: '',
+          gender: '',
+          residence: '',
+        };
+      },
+    },
+  },
   components: {
     AppBirthdayPicker,
     AppGenderPicker,
@@ -45,6 +58,12 @@ export default {
         residence: '',
       },
     };
+  },
+  mounted() {
+    this.formData.name = this.initValue.name;
+    this.formData.dob = this.initValue.dob;
+    this.formData.gender = this.initValue.gender;
+    this.formData.residence = this.initValue.residence;
   },
   methods: {
     onOK() {

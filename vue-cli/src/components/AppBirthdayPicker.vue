@@ -54,8 +54,10 @@ export default {
     date: null,
     menu: false,
   }),
-  mounted() {
-    this.date = this.value;
+  watch: {
+    value(newValue) {
+      this.date = newValue;
+    },
   },
   methods: {
     onConfirm() {

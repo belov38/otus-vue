@@ -22,8 +22,10 @@ export default {
       items: ['Мужской', 'Женский', 'не указан'],
     };
   },
-  mounted() {
-    this.gender = this.value;
+  watch: {
+    value(newValue) {
+      this.gender = newValue;
+    },
   },
   methods: {
     onChange() {

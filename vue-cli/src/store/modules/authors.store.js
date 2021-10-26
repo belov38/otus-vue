@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import Vue from 'vue';
 
 export default {
   namespaced: true,
@@ -21,6 +22,15 @@ export default {
     DELETE_AUTHOR(state, authorId) {
       state.authors = state.authors.filter((i) => i.authorId !== authorId);
     },
+    UPDATE_AUTHOR(state, {
+      authorId, name, dob, gender, residence,
+    }) {
+      const index = state.authors.findIndex((a) => a.authorId === authorId);
+      console.log(index, authorId);
+      Vue.set(state.authors, index, {
+        name, dob, gender, residence,
+      });
+    },
   },
   actions: {
     createAuthor(context, payload) {
@@ -29,5 +39,12 @@ export default {
     deleteAuthor(context, authorId) {
       context.commit('DELETE_AUTHOR', authorId);
     },
+    updateAuthor(context, payload) {
+      console.log(payload);
+      context.commit('UPDATE_AUTHOR', payload);
+    },
+  },
+  getters: {
+    getAuthorById: (state) => (authorId) => state.authors.find((i) => i.authorId === authorId),
   },
 };

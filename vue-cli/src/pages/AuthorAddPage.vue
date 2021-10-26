@@ -10,7 +10,7 @@
 
 <script>
 import { mapActions } from 'vuex';
-import AppAuthorForm from '@/pages/AppAuthorForm.vue';
+import AppAuthorForm from '@/components/AppAuthorForm.vue';
 
 export default {
   components: {

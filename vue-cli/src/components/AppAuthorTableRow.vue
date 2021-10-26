@@ -15,15 +15,19 @@
           УДАЛИТЬ
         </v-btn>
       </span>
+      <span v-else>
+      <v-btn small plain @click="onEditAuthor">
+          <v-icon>mdi-pen</v-icon>
+      </v-btn>
       <v-btn
         @click="delConfirmed=true"
-        v-else
         small
         plain>
         <v-icon>
           mdi-delete
         </v-icon>
       </v-btn>
+        </span>
     </td>
   </tr>
 </template>
@@ -44,6 +48,12 @@ export default {
   methods: {
     onDelete() {
       this.$emit('delete', this.item.authorId);
+    },
+    onEditAuthor() {
+      this.$router.push({
+        name: 'AuthorEdit',
+        params: { id: this.item.authorId },
+      });
     },
   },
 };

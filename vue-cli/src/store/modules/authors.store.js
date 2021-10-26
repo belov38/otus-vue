@@ -26,7 +26,6 @@ export default {
       authorId, name, dob, gender, residence,
     }) {
       const index = state.authors.findIndex((a) => a.authorId === authorId);
-      console.log(index, authorId);
       Vue.set(state.authors, index, {
         name, dob, gender, residence,
       });
@@ -40,7 +39,6 @@ export default {
       context.commit('DELETE_AUTHOR', authorId);
     },
     updateAuthor(context, payload) {
-      console.log(payload);
       context.commit('UPDATE_AUTHOR', payload);
     },
   },

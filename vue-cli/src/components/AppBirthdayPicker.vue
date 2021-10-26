@@ -54,10 +54,8 @@ export default {
     date: null,
     menu: false,
   }),
-  watch: {
-    value(newValue) {
-      this.date = newValue;
-    },
+  created() {
+    this.date = this.value;
   },
   methods: {
     onConfirm() {

@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import Vue from 'vue';
 
 export default {
   namespaced: true,
@@ -7,7 +8,13 @@ export default {
   },
   mutations: {
     ADD_BOOK(state, {
-      title, author, isbn, tags, price, category, description,
+      title,
+      author,
+      isbn,
+      tags,
+      price,
+      category,
+      description,
     }) {
       const bookData = {
         bookId: uuidv4(),
@@ -24,6 +31,14 @@ export default {
     DELETE_BOOK(state, bookId) {
       state.books = state.books.filter((i) => i.bookId !== bookId);
     },
+    UPDATE_BOOK(state, {
+      bookId, title, author, isbn, tags, price, category, description,
+    }) {
+      const index = state.books.findIndex((b) => b.bookId === bookId);
+      Vue.set(state.books, index, {
+        title, author, isbn, tags, price, category, description,
+      });
+    },
   },
   actions: {
     createBook(context, bookData) {
@@ -32,5 +47,11 @@ export default {
     deleteBook(context, bookId) {
       context.commit('DELETE_BOOK', bookId);
     },
+    updateBook(context, payload) {
+      context.commit('UPDATE_BOOK', payload);
+    },
+  },
+  getters: {
+    getBookById: (state) => (bookId) => state.books.find((i) => i.bookId === bookId),
   },
 };

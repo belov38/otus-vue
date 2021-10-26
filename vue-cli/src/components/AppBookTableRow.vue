@@ -15,15 +15,22 @@
           УДАЛИТЬ
         </v-btn>
       </span>
-      <v-btn
-        @click="delConfirmed=true"
+      <span
         v-else
-        small
-        plain>
+      >
+            <v-btn small plain @click="onEditBook">
+            <v-icon>mdi-pen</v-icon>
+        </v-btn>
+        <v-btn
+          @click="delConfirmed=true"
+          small
+          plain>
         <v-icon>
           mdi-delete
         </v-icon>
       </v-btn>
+      </span>
+
     </td>
   </tr>
 </template>
@@ -42,6 +49,12 @@ export default {
     };
   },
   methods: {
+    onEditBook() {
+      this.$router.push({
+        name: 'BookEdit',
+        params: { id: this.item.bookId },
+      });
+    },
     onDelete() {
       this.$emit('delete', this.item.bookId);
     },

@@ -59,11 +59,8 @@ export default {
       },
     };
   },
-  mounted() {
-    this.formData.name = this.initValue.name;
-    this.formData.dob = this.initValue.dob;
-    this.formData.gender = this.initValue.gender;
-    this.formData.residence = this.initValue.residence;
+  created() {
+    Object.assign(this.formData, this.initValue);
   },
   methods: {
     onOK() {

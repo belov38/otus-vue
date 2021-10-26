@@ -16,18 +16,18 @@
         </v-btn>
       </span>
       <span v-else>
-      <v-btn small plain @click="onEditAuthor">
-          <v-icon>mdi-pen</v-icon>
-      </v-btn>
-      <v-btn
-        @click="delConfirmed=true"
-        small
-        plain>
-        <v-icon>
-          mdi-delete
-        </v-icon>
-      </v-btn>
-        </span>
+        <v-btn small plain @click="onEditAuthor">
+            <v-icon>mdi-pen</v-icon>
+        </v-btn>
+        <v-btn
+          @click="delConfirmed=true"
+          small
+          plain>
+          <v-icon>
+            mdi-delete
+          </v-icon>
+        </v-btn>
+      </span>
     </td>
   </tr>
 </template>

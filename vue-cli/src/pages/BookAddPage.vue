@@ -1,6 +1,6 @@
 <template>
   <div>
-    <app-book-form @confirm="onConfirm">
+    <app-book-form @confirm="onConfirm" @cancel="onCancel">
       <template #header>
         <h1 class="display-1 my-5">Добавить новую книгу</h1>
       </template>
@@ -18,6 +18,10 @@ export default {
     ...mapActions('books', ['createBook']),
     onConfirm(formData) {
       this.createBook(formData);
+      this.$router.push({ name: 'BooksList' });
+    },
+    onCancel() {
+      this.$router.push({ name: 'BooksList' });
     },
   },
 };

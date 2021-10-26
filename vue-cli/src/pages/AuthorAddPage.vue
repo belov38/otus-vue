@@ -1,6 +1,6 @@
 <template>
   <div>
-    <app-author-form @confirm="onConfirm">
+    <app-author-form @confirm="onConfirm" @cancel="onCancel">
       <template #header>
         <h1 class="display-1 my-5">Добавить нового автора</h1>
       </template>
@@ -20,6 +20,10 @@ export default {
     ...mapActions('authors', ['createAuthor']),
     onConfirm(formData) {
       this.createAuthor(formData);
+      this.$router.push({ name: 'AuthorsList' });
+    },
+    onCancel() {
+      this.$router.push({ name: 'AuthorsList' });
     },
   },
 };

@@ -22,8 +22,13 @@ export default {
       items: ['Мужской', 'Женский', 'не указан'],
     };
   },
-  created() {
-    this.gender = this.value;
+  watch: {
+    value: {
+      immediate: true,
+      handler(newValue) {
+        this.gender = newValue;
+      },
+    },
   },
   methods: {
     onChange() {

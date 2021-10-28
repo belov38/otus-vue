@@ -3,6 +3,9 @@
     <slot name="header">
       <h1 class="display-1 my-5">Автор</h1>
     </slot>
+    <v-btn @click="generateRandom">
+      Придумать
+    </v-btn>
     <v-text-field
       prepend-icon="mdi-form-textbox"
       v-model="formData.name"
@@ -27,6 +30,7 @@
   </div>
 </template>
 <script>
+import faker from 'faker';
 import AppBirthdayPicker from '@/components/AppBirthdayPicker.vue';
 import AppGenderPicker from '@/components/AppGenderPicker.vue';
 
@@ -68,6 +72,13 @@ export default {
     },
     onCancel() {
       this.$emit('cancel');
+    },
+    generateRandom() {
+      this.formData.name = faker.name.findName();
+      this.formData.residence = faker.address.country();
+      this.$set(this.formData, 'gender', 'Мужской');
+      const genders = ['Мужской', 'Женский', 'не указан'];
+      this.formData.gender = genders[Math.floor(Math.random() * 3)];
     },
   },
 };

@@ -44,5 +44,7 @@ export default {
   },
   getters: {
     getAuthorById: (state) => (authorId) => state.authors.find((i) => i.authorId === authorId),
+    getBooksByAuthorName: (state, getters, rootState) => (authorName) => rootState
+      .books.books.filter((b) => b.author === authorName),
   },
 };

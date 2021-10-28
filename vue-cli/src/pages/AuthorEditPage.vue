@@ -1,19 +1,22 @@
 <template>
   <div>
-    <app-author-form :init-value="authorData" @confirm="onConfirm">
+    <app-author-form :init-value="authorData" @confirm="onConfirm" @cancel="onCancel">
       <template #header>
         <h1 class="display-1 my-5">Информация об авторе</h1>
       </template>
     </app-author-form>
+    <app-authors-books-list :books="authorsBooks"/>
   </div>
 </template>
 
 <script>
 import AppAuthorForm from '@/components/AppAuthorForm.vue';
+import AppAuthorsBooksList from '@/components/AppAuthorsBooksList.vue';
 
 export default {
   components: {
     AppAuthorForm,
+    AppAuthorsBooksList,
   },
   data() {
     return {
@@ -33,6 +36,11 @@ export default {
       },
     },
   },
+  computed: {
+    authorsBooks() {
+      return this.$store.getters['authors/getBooksByAuthorName'](this.authorData.name);
+    },
+  },
   methods: {
     onConfirm(formData) {
       const payload = {
@@ -40,6 +48,10 @@ export default {
         authorId: this.$route.params.id,
       };
       this.$store.dispatch('authors/updateAuthor', payload);
+      this.$router.push({ name: 'AuthorsList' });
+    },
+    onCancel() {
+      this.$router.push({ name: 'AuthorsList' });
     },
   },
 };

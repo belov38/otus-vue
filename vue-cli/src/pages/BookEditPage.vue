@@ -2,6 +2,7 @@
   <div>
     <app-book-form
       @confirm="onConfirm"
+      @cancel="onCancel"
       :init-value="bookData"
     >
       <template #header>
@@ -47,6 +48,10 @@ export default {
         bookId: this.$route.params.id,
       };
       this.$store.dispatch('books/updateBook', payload);
+      this.$router.go(-1);
+    },
+    onCancel() {
+      this.$router.go(-1);
     },
   },
 };

@@ -3,6 +3,9 @@
     <slot name="header">
       <h1 class="display-1 my-5">Книга</h1>
     </slot>
+    <v-btn @click="generateRandom">
+      Придумать
+    </v-btn>
     <v-text-field
       prepend-icon="mdi-book-open-blank-variant"
       v-model="formData.title"
@@ -49,6 +52,7 @@
   </div>
 </template>
 <script>
+import faker from 'faker';
 import AppAuthorInput from '@/components/AppAuthorInput.vue';
 
 export default {
@@ -94,6 +98,13 @@ export default {
     },
     onCancel() {
       this.$emit('cancel');
+    },
+    generateRandom() {
+      this.formData.title = faker.lorem.sentence();
+      this.formData.description = faker.lorem.paragraph();
+      const authorsCount = this.$store.state.authors.authors.length;
+      this.formData.author = this
+        .$store.state.authors.authors[Math.floor(Math.random() * authorsCount)].name;
     },
   },
 };

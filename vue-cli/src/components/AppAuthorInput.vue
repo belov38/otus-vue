@@ -21,8 +21,13 @@ export default {
       currentValue: '',
     };
   },
-  created() {
-    this.currentValue = this.value;
+  watch: {
+    value: {
+      immediate: true,
+      handler(newValue) {
+        this.currentValue = newValue;
+      },
+    },
   },
   computed: {
     authors() {

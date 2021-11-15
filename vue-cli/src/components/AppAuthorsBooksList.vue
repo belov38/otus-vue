@@ -1,7 +1,7 @@
 <template>
   <div class="mt-10">
     <h1 class="display-1">Книги автора</h1>
-    <app-book-table :books="books" />
+    <AppBookTable :books="books" />
   </div>
 </template>
 

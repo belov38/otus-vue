@@ -15,7 +15,7 @@
       </tr>
       </thead>
       <tbody>
-      <app-author-table-row
+      <AppAuthorTableRow
         v-for="item in authors"
         :key="item.authorId"
         :item="item"

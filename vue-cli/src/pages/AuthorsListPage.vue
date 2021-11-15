@@ -2,7 +2,7 @@
   <div>
     <h1>Список авторов</h1>
     <v-btn @click="newAuthor">Добавить автора</v-btn>
-    <app-author-table :authors="authors" />
+    <AppAuthorTable :authors="authors" />
   </div>
 </template>
 

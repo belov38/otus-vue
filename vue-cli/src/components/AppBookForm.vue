@@ -11,7 +11,7 @@
       v-model="formData.title"
       label="Название книги"
     />
-    <app-author-input
+    <AppAuthorInput
       v-model="formData.author"
     />
     <v-text-field

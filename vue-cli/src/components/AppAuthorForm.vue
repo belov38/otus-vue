@@ -10,17 +10,17 @@
       prepend-icon="mdi-form-textbox"
       v-model="formData.name"
       label="ФИО"/>
-    <app-birthday-picker v-model="formData.dob"/>
-    <app-gender-picker v-model="formData.gender"/>
+    <AppBirthdayPicker v-model="formData.dob"/>
+    <AppGenderPicker v-model="formData.gender"/>
     <v-text-field
       prepend-icon="mdi-earth"
       v-model="formData.residence"
       label="Страна проживания"
     />
     <div class="d-flex justify-space-between">
-      <v-btn
-        @click="onCancel"
-      >Отмена</v-btn>
+      <v-btn @click="onCancel">
+        Отмена
+      </v-btn>
       <v-btn
         @click="onOK"
         color="primary"

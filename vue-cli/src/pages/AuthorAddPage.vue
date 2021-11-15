@@ -1,10 +1,10 @@
 <template>
   <div>
-    <app-author-form @confirm="onConfirm" @cancel="onCancel">
+    <AppAuthorForm @confirm="onConfirm" @cancel="onCancel">
       <template #header>
         <h1 class="display-1 my-5">Добавить нового автора</h1>
       </template>
-    </app-author-form>
+    </AppAuthorForm>
   </div>
 </template>
 

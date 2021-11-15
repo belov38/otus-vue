@@ -1,11 +1,11 @@
 <template>
   <div>
-    <app-author-form :init-value="authorData" @confirm="onConfirm" @cancel="onCancel">
+    <AppAuthorForm :init-value="authorData" @confirm="onConfirm" @cancel="onCancel">
       <template #header>
         <h1 class="display-1 my-5">Информация об авторе</h1>
       </template>
-    </app-author-form>
-    <app-authors-books-list :books="authorsBooks"/>
+    </AppAuthorForm>
+    <AppAuthorsBooksList :books="authorsBooks"/>
   </div>
 </template>
 

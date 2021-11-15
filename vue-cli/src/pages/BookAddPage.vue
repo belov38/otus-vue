@@ -1,10 +1,10 @@
 <template>
   <div>
-    <app-book-form @confirm="onConfirm" @cancel="onCancel">
+    <AppBookForm @confirm="onConfirm" @cancel="onCancel">
       <template #header>
         <h1 class="display-1 my-5">Добавить новую книгу</h1>
       </template>
-    </app-book-form>
+    </AppBookForm>
   </div>
 </template>
 

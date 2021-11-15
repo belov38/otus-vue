@@ -9,7 +9,7 @@
     />
 
     <v-btn @click="addBook">Добавить книгу</v-btn>
-    <app-book-table :books="filteredBooks"/>
+    <AppBookTable :books="filteredBooks"/>
   </div>
 </template>
 

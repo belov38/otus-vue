@@ -1,6 +1,6 @@
 <template>
   <div>
-    <app-book-form
+    <AppBookForm
       @confirm="onConfirm"
       @cancel="onCancel"
       :init-value="bookData"
@@ -8,7 +8,7 @@
       <template #header>
         <h1 class="display-1 my-5">Информация о книге</h1>
       </template>
-    </app-book-form>
+    </AppBookForm>
   </div>
 </template>
 

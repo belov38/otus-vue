@@ -15,7 +15,7 @@
       </tr>
       </thead>
       <tbody>
-      <app-book-table-row
+      <AppBookTableRow
         v-for="item in books"
         :key="item.bookId"
         :item="item"

@@ -3,7 +3,7 @@
     <slot name="header">
       <h1 class="display-1 my-5">Книга</h1>
     </slot>
-    <v-btn @click="generateRandom">
+    <v-btn @click="generateRandom" data-test="generate">
       Придумать
     </v-btn>
     <v-text-field
@@ -41,12 +41,17 @@
     />
     <div class="d-flex justify-space-between">
       <v-btn
-      @click="onCancel">
-        Отмена</v-btn>
+        @click="onCancel"
+        data-test="cancel"
+      >
+        Отмена
+      </v-btn>
       <v-btn
         @click="onOK"
         color="primary"
-      >OK
+        data-test="ok"
+      >
+        OK
       </v-btn>
     </div>
   </div>

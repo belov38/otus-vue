@@ -1,6 +1,4 @@
 import { createLocalVue, mount, shallowMount } from '@vue/test-utils';
-// import Vuex from 'vuex';
-// import { cloneDeep } from 'lodash';
 import Vue from 'vue';
 import Vuetify from 'vuetify';
 import Vuex from 'vuex';
@@ -8,8 +6,6 @@ import { cloneDeep } from 'lodash';
 import AppBookForm from '@/components/AppBookForm.vue';
 import authorsStore from '@/store/modules/authors.store';
 import booksStore from '@/store/modules/books.store';
-// import authorsStore from '@/store/modules/authors.store';
-// import booksStore from '@/store/modules/books.store';
 
 Vue.use(Vuetify);
 

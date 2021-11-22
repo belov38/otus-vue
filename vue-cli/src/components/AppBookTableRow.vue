@@ -1,6 +1,6 @@
 <template>
   <tr>
-    <td>{{ item.title }}</td>
+    <td data-test="table-row">{{ item.title }}</td>
     <td>{{ item.author }}</td>
     <td class="actions">
       <span class="d-flex"

@@ -6,8 +6,8 @@
       dark
     >
       <div class="d-flex align-center">
-        <v-btn text to="/books">Книги</v-btn>
-        <v-btn text to="/authors">Авторы</v-btn>
+        <v-btn text to="/books" data-test="books">Книги</v-btn>
+        <v-btn text to="/authors" data-test="authors">Авторы</v-btn>
       </div>
 
     </v-app-bar>

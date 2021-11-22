@@ -10,6 +10,7 @@
       prepend-icon="mdi-book-open-blank-variant"
       v-model="formData.title"
       label="Название книги"
+      data-test="title"
     />
     <AppAuthorInput
       v-model="formData.author"

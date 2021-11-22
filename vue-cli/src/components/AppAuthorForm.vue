@@ -3,28 +3,36 @@
     <slot name="header">
       <h1 class="display-1 my-5">Автор</h1>
     </slot>
-    <v-btn @click="generateRandom">
+    <v-btn @click="generateRandom" data-test="generate">
       Придумать
     </v-btn>
     <v-text-field
       prepend-icon="mdi-form-textbox"
       v-model="formData.name"
-      label="ФИО"/>
-    <AppBirthdayPicker v-model="formData.dob"/>
-    <AppGenderPicker v-model="formData.gender"/>
+      label="ФИО"
+      data-test="name"
+    />
+    <AppBirthdayPicker v-model="formData.dob" data-test="dob"/>
+    <AppGenderPicker v-model="formData.gender" data-test="gender"/>
     <v-text-field
       prepend-icon="mdi-earth"
       v-model="formData.residence"
       label="Страна проживания"
+      data-test="residence"
     />
     <div class="d-flex justify-space-between">
-      <v-btn @click="onCancel">
+      <v-btn
+        @click="onCancel"
+        data-test="cancel"
+      >
         Отмена
       </v-btn>
       <v-btn
         @click="onOK"
         color="primary"
-      >OK
+        data-test="ok"
+      >
+        OK
       </v-btn>
     </div>
   </div>

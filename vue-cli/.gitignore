@@ -2,7 +2,9 @@
 node_modules
 /dist
 
+**/coverage
 
+**/*.mp4
 # local env files
 .env.local
 .env.*.local

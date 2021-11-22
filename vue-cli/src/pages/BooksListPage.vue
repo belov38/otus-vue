@@ -8,7 +8,7 @@
       clearable
     />
 
-    <v-btn @click="addBook">Добавить книгу</v-btn>
+    <v-btn @click="addBook" data-test="add-book">Добавить книгу</v-btn>
     <AppBookTable :books="filteredBooks"/>
   </div>
 </template>
